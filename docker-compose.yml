@@ -1,9 +1,9 @@
 version: '3'
 services:
   web:
-    image: nginx:1.13.5-alpine
+    image: nginx:latest
     ports:
       - "80:80"
     volumes:
-      - ./web/default.conf:/etc/nginx/conf.d/default.conf
-      - ./data/html:/var/www/html
+      - ./web/conf/default.conf:/etc/nginx/conf.d/default.conf
+      - ./web/src:/var/www/

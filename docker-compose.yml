@@ -4,12 +4,6 @@ services:
     image: nginx:latest
     ports:
       - "80:80"
-    depends_on:
-      - app
     volumes:
       - ./web/conf/default.conf:/etc/nginx/conf.d/default.conf
-      #- ./web/src:/var/www/ PHP側でソースを管理するためコメントアウト
-  app:
-    image: php:7.4.0-fpm
-    volumes:
-      - ./php/src:/var/www/
+      - ./web/src:/var/www/
